@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block content%}
+
+	<!-- Blog -->
+		<div class="blog">
+			<div class="container">
+				<!-- single -->
+				<div class="single">
+						<div class="single-grid">
+							<div class="col-md-8 w3ls-blog-left">
+								<div class="w3-blog-left-grid">
+									<!-- <div class="w3ls-blog-leftl">
+										<h4>NOV <span>15</span></h4>
+										<a href="#"><i class="fa fa-tags" aria-hidden="true"></i> 10</a>
+									</div> -->
+									
+									<div class="coment-form">
+										<h4>POST YOUR BLOG</h4>
+										<form action="{%url 'blogadd_url' %}" method="post">
+											{% csrf_token %}
+											<input type="text" value="{{uname}}" name="name">
+											<input type="text" name="title" placeholder="Title" required="">		
+											<textarea placeholder="Message" name="text" required=""></textarea>
+
+											Upload Photo<input type="file" name="pic" accept="image/*">	
+											
+											<input type="submit" value="Submit Comment" >
+										</form>
+									</div>
+								</div>
+							</div>
+								
+							<div class="clearfix"> </div>
+						</div>
+				</div>
+				<!-- //single -->
+			</div>
+		</div>
+		<!-- // Blog -->
+{% endblock %}

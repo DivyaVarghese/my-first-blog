@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% block content%}
+
+	<!-- Blog -->
+		<div class="blog">
+			<div class="container">
+				<!-- single -->
+				<div class="single">
+						<div class="single-grid">
+							<div class="col-md-8 w3ls-blog-left">
+								<div class="w3-blog-left-grid">
+									<div class="coment-form">
+										<h4>EDIT YOUR BLOG</h4>
+										<form action="{%url 'blogedit_url' %}" method="post">
+											{% csrf_token %}
+											<input type="text" value="{{user}}" name="name"><br>
+											<input type="text" name="title" value="{{u.title}}" required="">				
+											<textarea name="text" required="">{{u.text}}</textarea>
+											<input type="submit" value="Resubmit" >
+										</form>
+									</div>
+								</div>
+							</div>
+								<div class="clearfix"> </div>
+						</div>
+				</div>
+				<!-- //single -->
+			</div>
+		</div>
+		<!-- // Blog -->
+{% endblock %}
